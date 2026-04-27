@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Attendance</title>
+</head>
+
+<body>
+
+    <h1>Attendance Tracking</h1>
+
+    <form method="POST" action="/attendance">
+
+        <label>Student:</label>
+        <select name="student">
+            <option>John Smith</option>
+            <option>Maria Jones</option>
+            <option>Sarah White</option>
+            <option>Ahmed Khan</option>
+        </select>
+
+        <br><br>
+
+        <label>Date:</label>
+        <input type="date" name="date" required>
+
+        <br><br>
+
+        <label>Status:</label>
+        <select name="status">
+            <option>Present</option>
+            <option>Absent</option>
+            <option>Late</option>
+        </select>
+
+        <br><br>
+
+        <button type="submit">Save Attendance</button>
+
+    </form>
+
+    <br>
+
+    <h2>Attendance History</h2>
+
+    <table border="1" cellpadding="8">
+        <tr>
+            <th>Date</th>
+            <th>Student</th>
+            <th>Status</th>
+        </tr>
+
+        <tr>
+            <td>23/04/2026</td>
+            <td>John Smith</td>
+            <td>Present</td>
+        </tr>
+
+        <tr>
+            <td>23/04/2026</td>
+            <td>Sarah White</td>
+            <td>Present</td>
+        </tr>
+
+        <tr>
+            <td>23/04/2026</td>
+            <td>Ahmed Khan</td>
+            <td>Late</td>
+        </tr>
+    </table>
+
+    <br><br>
+
+    <a href="/export_csv">
+        <button type="button">Export CSV</button>
+    </a>
+
+    <br><br>
+
+    <a href="/dashboard">Back to Dashboard</a>
+
+</body>
+</html>
