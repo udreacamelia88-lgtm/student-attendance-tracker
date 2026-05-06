@@ -6,53 +6,44 @@
 <body>
     <h1>Student Management</h1>
 
-    <form>
-        <input type="text" placeholder="Student Name">
-        <input type="text" placeholder="Course">
-        <button>Add Student</button>
+    <h2>Add Student</h2>
+
+    <form method="POST">
+        <label>Name:</label>
+        <input type="text" name="name" required>
+        <br><br>
+
+        <label>Course:</label>
+        <input type="text" name="course" required>
+        <br><br>
+
+        <label>Email:</label>
+        <input type="email" name="email">
+        <br><br>
+
+        <button type="submit">Add Student</button>
     </form>
 
-    <h2>Student List</h2>
+    <h2>Student Records</h2>
 
     <table border="1" cellpadding="8">
         <tr>
-            <th>ID</th>
             <th>Name</th>
             <th>Course</th>
+            <th>Email</th>
             <th>Action</th>
         </tr>
-        <tr>
-            <td>1</td>
-            <td>John Smith</td>
-            <td>Computing</td>
-            <td>Edit | Delete</td>
-        </tr>
-        <tr>
-            <td>2</td>
-            <td>Maria Jones</td>
-            <td>Business</td>
-            <td>Edit | Delete</td>
-        </tr>
-        <tr>
-<td>3</td>
-<td>David Brown</td>
-<td>Cyber Security</td>
-<td>Edit | Delete</td>
-</tr>
 
-<tr>
-<td>4</td>
-<td>Sarah White</td>
-<td>Business</td>
-<td>Edit | Delete</td>
-</tr>
-
-<tr>
-<td>5</td>
-<td>Ahmed Khan</td>
-<td>Software Engineering</td>
-<td>Edit | Delete</td>
-</tr>
+        {% for student in students %}
+        <tr>
+            <td>{{ student.name }}</td>
+            <td>{{ student.course }}</td>
+            <td>{{ student.email }}</td>
+            <td>
+                <a href="{{ url_for('delete_student', student_id=student.student_id) }}">Delete</a>
+            </td>
+        </tr>
+        {% endfor %}
     </table>
 
     <br>

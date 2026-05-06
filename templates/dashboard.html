@@ -5,17 +5,17 @@
 </head>
 <body>
     <h1>Dashboard</h1>
+
     <p>Welcome Lecturer</p>
 
     <ul>
-        <li>Total Students: 25</li>
-        <li>Attendance Today: 20</li>
-        <li>Absent Today: 5</li>
+        <li>Total Students: {{ total_students }}</li>
+        <li>Attendance Today: {{ attendance_today }}</li>
+        <li>Absent Today: {{ absent_today }}</li>
     </ul>
 
     <p><a href="/students">Manage Students</a></p>
     <p><a href="/attendance">Record Attendance</a></p>
-
-    <a href="/">Logout</a>
+    <p><a href="/logout">Logout</a></p>
 </body>
 </html>
